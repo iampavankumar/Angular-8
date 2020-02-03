@@ -1,0 +1,126 @@
+<!-- for adding employees -->
+<!-- <button class='btn btn-dark btn-block' (click)='addEmp()'>add employees</button> -->
+
+
+
+
+
+<!-- 
+<table class="table mt-4">
+  <thead class="thead-dark">
+    <tr>
+      <th>Index</th>
+      <th>empId</th>
+      <th>empName</th>
+      <th>empImg</th>
+      <th>empSal</th>
+      <th>empComp</th>
+      <th>empLoc</th>
+      <th>empDOJ</th>
+      <th>empDest</th>
+      <th>empEdu</th>
+      <th>empCol</th>
+      <th>Remove</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of employees; index as i"
+    [ngStyle]="{'color':'white','padding':'10px','background-color':emp.empComp==='Oracle'?'red':'green'}">
+      <td><span class="badge badge-success">{{i+1}}</span></td>
+      <td>{{emp.empID}}</td>
+      <td>{{emp.empName}}</td>
+      <td><img  src="{{emp.empImg}}" class="img-fluid rounded" srcset="" alt="image"></td>
+      <td>{{emp.empSal}}</td>
+      <td>{{emp.empComp}}</td>
+      <td>{{emp.empLoc}}</td>
+      <td>{{emp.empDOJ}}</td>
+      <td>{{emp.empDest}}</td>
+      <td>{{emp.empEdu}}</td>
+      <td>{{emp.empCol}}</td>
+      <td><button class="btn btn-danger" (click)='removeEmp(emp)'>Remove</button></td>
+    </tr>
+  </tbody>
+</table> -->
+
+<!-- 
+<div *ngIf='employees.length>0'>user are here</div>
+<div *ngIf='employees.length==0'>user not are here</div> -->
+
+
+<!-- <div *ngIf="employees.length>0; then emp else noemp"></div>
+<ng-template #emp>
+  <h1 style="color:green;">employees are here</h1>
+</ng-template>
+<ng-template #noemp>
+  <h1 style="color: red;">no emps</h1>
+</ng-template> -->
+
+
+<!-- Switch case -->
+
+<!-- <span [ngSwitch]='color'> 
+  <p *ngSwitchCase='"red"  '> Red Color</p>
+  <p *ngSwitchCase='"Green"'> Green Color</p>
+  <p *ngSwitchCase='"pink"'> pink Color</p>
+
+  <p *ngDefault> no colour</p>
+
+</span> -->
+
+
+<!-- <h1>OBSERVABLE OF HHTPCLIENT</h1>
+
+<div class="container">
+  <ul class="list-group">
+    <li class="list-group-item"
+    *ngFor="let post of posts;index as i">
+    <span class="badge badge-dark">{{i+1}}</span>
+    <h1>{{post.title}}</h1>
+    <p>{{post.body}}</p>
+</li>
+  </ul>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h1>for GITHUB API</h1> -->
+
+<div class="container">
+  <input type="text" name="" placeholder="adding into api" class="form-control"
+  #title (keyup.enter)="addPost(title)">
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>index</th>
+        <th>title</th>
+        <td>Removing</td>
+    
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let x of posts;index as i">
+       
+        <td><span class="badge badge-dark">{{i+1}}</span></td>
+        <td>{{x.title}}</td>
+        <td><button class="btn btn-primary" type="submit"
+         (click)="removePost(post)"> Remove</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

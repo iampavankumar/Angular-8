@@ -1,0 +1,33 @@
+<div class="col-md-6 offset-4 card mt-4">
+    <div class="card-body">
+        <h1 class="display-3 text-center text-success text-bold">Reactive Forms</h1>
+        <form action="" [formGroup]="form" (ngSubmit)="submit(form)">
+            <div class="form-group">
+                <label for="username">User Name</label>
+                <input 
+                formControlName='username' name="username"
+                type="text" class="form-control"  value="username">
+
+                <div class="alert alert-danger mt-3"
+                *ngIf='username.invalid && username.touched' >
+                    <p *ngIf="username.errors.required">username required</p>
+                    <p *ngIf="username.errors.minlength">min 3 char</p>
+                    <p *ngIf="username.errors.pattern">username is not matching</p>
+                    <p *ngIf="username.errors.nospacebetweenusername">username has space</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input 
+                formControlName="password"
+                type="password" class="form-control"  value="password">
+                <div class="alert alert-danger mt-3"
+                *ngIf='password.invalid && password.touched' >
+                    password is required
+                </div> 
+
+            </div>
+            <button class="btn btn-dark btn-block">SignUp</button>
+        </form>
+    </div>
+</div>

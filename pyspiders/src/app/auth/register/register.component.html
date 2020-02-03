@@ -1,0 +1,49 @@
+
+
+<div class="container card mt-5">
+    <div class="card-body">
+        <form action="#" method="get" #form="ngForm" (ngSubmit)="submit(form)" >
+            <h1 class="display-4 text-center mb-4">{{registerTitle.toUpperCase()}}</h1>
+            <div class="form-group">
+                <label for="first name">first name</label><span style="color: red !important; display: inline; float: none;">(*)</span>
+                <input  
+                type="text"  id="first name" class="form-control" placeholder="first name">
+            </div>
+            <div class="form-group">
+                <label for="last name">last name</label>
+                <input type="text"  id="last name" class="form-control" placeholder="last name">
+            </div>
+            <div class="form-group">
+                <label for="email">email</label>
+                <input type="email"  id="email" class="form-control" placeholder="email">
+            </div>
+            <div class="form-group">
+                <label for="phone number">phone number</label>
+                <input type="tel"  id="phone number" class="form-control" placeholder="phone number">
+            </div>
+            <div class="form-group">
+                <label for="gender">gender</label>
+                <input type="radio"  id="gender" class="ml-2 mr-2" name="gender">Male           
+                <input type="radio"  id="gender" class="ml-2 mr-2" name="gender">Female
+            </div>
+            <div class="form-group">
+                <label for="country">Country</label><span style="color: red !important; display: inline; float: none;">*</span>      
+                <select 
+                required name="country" id="country" class="form-control"
+                 ngModel #country='ngModel'  name="country"
+                >
+                <option value="">please select country</option>
+                <option *ngFor="let country of country_list ;index as i"
+                value="{{i}}">{{country}}</option>
+                </select>
+                
+            
+            </div>
+            <div class="form-group">
+                <button 
+                [disabled]='!form.invalid'
+                class="btn btn-primary btn -block">register</button>
+            </div>
+        </form>
+    </div>
+</div>

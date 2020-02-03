@@ -1,0 +1,43 @@
+<img src="{{usersprofile}}" alt=""> 
+<img [src]="usersprofile" alt="">
+
+<button class="btn btn-primary" [class.active]='isActive'>Class binding</button> 
+
+<table>
+    <tr>
+        <td [attr.colspan]='colspan'>Attribute binding</td>
+        <td>pavan</td>
+        <td>jsp</td>
+    </tr>
+</table>
+
+
+<div>
+    <button [style.background]="color ?'green' :'red'">Style Binding</button>
+</div>
+
+<div>
+    <button (click)="clickEvent($event)" class="btn btn-success">Event Binding</button>
+</div>
+<div>
+    <input type="text" class="form-control" (keyup)='keyupEvent($event)'>
+</div>
+
+
+<div>
+    <input type="text" placeholder="Enter here" (keyup.enter)='angularkeyeventfilter($event)'>
+</div>
+
+<p>angular way</p>
+
+<div>
+    <input type="email" class="form-control" placeholder="Enter ur mail id" #userid (keyup.enter)='entermail(userid.value)'>
+</div>
+
+
+<h1>TWO WAY BINDING</h1>
+
+<div>
+    <input type="text" class="form-control" placeholder="enter user mail" [(ngModel)]='username'> 
+    <h1>{{username}}</h1>
+</div>

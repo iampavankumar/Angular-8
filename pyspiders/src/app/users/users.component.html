@@ -1,0 +1,22 @@
+<h1>Emp Details</h1>
+<table class="table table-bordered mt-8">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Company</th>
+        <th>DOJ</th>
+        <th>Desigination</th>
+        <th>Sal</th>
+        <th>Location</th>
+    </tr>
+    <tr *ngFor="let user of users">
+        <td>{{user.name}}</td>
+        <td>{{user.age}}</td>
+        <td>{{user.company}}</td>
+        <td>{{user.doj}}</td>
+        <td>{{user.desigination}}</td>
+        <td>{{user.sal}}</td>
+        <td>{{user.loc}}</td>
+    
+    </tr>
+</table>

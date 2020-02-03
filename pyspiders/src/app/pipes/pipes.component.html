@@ -1,0 +1,40 @@
+<!-- {{employees|json}} -->
+
+
+
+<div class="container">
+    <input type="search" name="" id="" class="form-control mb-4 mt-2" placeholder="search here" 
+    [(ngModel)]="searchText" >
+    <h1>{{searchText}}</h1>
+  </div>
+
+
+
+<div class="container">
+    <table class="table table-bordered table-hover table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <td>ID</td>
+                <td>NAME</td>
+                <td>company</td>
+                <td>sal</td>
+                <td>des</td>
+                <td>DOJ</td>
+                <td>loc</td>
+                <td>gender</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let x of employees |filter:searchText">
+                <td>{{x.emp_id |uppercase}}</td>
+                <td>{{x.emp_name |uppercase}}</td>
+                <td>{{x.emp_company|lowercase}}</td>
+                <td>{{x.emp_sal |currency:'INR'}}</td>
+                <td>{{x.emp_des |titlecase}}</td>
+                <td>{{x.emp_DOJ |date:'fullDate'}}</td>
+                <td>{{x.emp_loc}}</td>
+                <td>{{x.emp_gen|gender:x.emp_gen}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
